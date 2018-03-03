@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="conversion_8cpp" kind="file" language="C++">
+    <compoundname>conversion.cpp</compoundname>
+    <includes refid="classes_8h" local="yes">classes.h</includes>
+    <includes refid="primitive_8h" local="yes">primitive.h</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>classes.h</label>
+        <link refid="classes_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>conversion.cpp</label>
+        <link refid="conversion_8cpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>primitive.h</label>
+        <link refid="primitive_8h"/>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="conversion_8cpp_1af755c3abc8b4cd441746346f4aadc1fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classview2_d" kindref="compound">view2D</ref></type>
+        <definition>view2D Generate2D</definition>
+        <argsstring>(object a, double x, double y, double z)</argsstring>
+        <name>Generate2D</name>
+        <param>
+          <type><ref refid="classobject" kindref="compound">object</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="conversion.cpp" line="4" column="1" bodyfile="conversion.cpp" bodystart="4" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="function" id="conversion_8cpp_1ab732d8648dca292f5c6d03d3c8974783" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classview2_d" kindref="compound">view2D</ref> []</type>
+        <definition>view2D [] orthographicViews</definition>
+        <argsstring>(object a)</argsstring>
+        <name>orthographicViews</name>
+        <param>
+          <type><ref refid="classobject" kindref="compound">object</ref></type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="conversion.cpp" line="10" column="1" bodyfile="conversion.cpp" bodystart="10" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="conversion_8cpp_1a6d172d5c6754ca0c9a657d3705ff765d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classobject" kindref="compound">object</ref></type>
+        <definition>object Generate3D</definition>
+        <argsstring>(view2D a, view2D b, view2D c)</argsstring>
+        <name>Generate3D</name>
+        <param>
+          <type><ref refid="classview2_d" kindref="compound">view2D</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="classview2_d" kindref="compound">view2D</ref></type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type><ref refid="classview2_d" kindref="compound">view2D</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="conversion.cpp" line="17" column="1" bodyfile="conversion.cpp" bodystart="17" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="classes_8h" kindref="compound">classes.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="primitive_8h" kindref="compound">primitive.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="conversion_8cpp_1af755c3abc8b4cd441746346f4aadc1fc" refkind="member"><highlight class="normal"><ref refid="classview2_d" kindref="compound">view2D</ref><sp/><ref refid="conversion_8cpp_1af755c3abc8b4cd441746346f4aadc1fc" kindref="member">Generate2D</ref>(</highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>a,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="primitive_8h_1a521441fc7ec247d21ca8c376f778ff08" kindref="member">x</ref>,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="primitive_8h_1a5e287957a4fe616e55aa59c129f49a92" kindref="member">y</ref>,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="primitive_8h_1aa4b230975c7672e64e45f871e10cddc1" kindref="member">z</ref>){</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//takes<sp/>an<sp/>object<sp/>and<sp/>the<sp/>direction<sp/>cosines<sp/>of<sp/>the<sp/>normal<sp/>of<sp/>the<sp/>plane<sp/>to<sp/>which<sp/>projection<sp/>is<sp/>needed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="conversion_8cpp_1ab732d8648dca292f5c6d03d3c8974783" refkind="member"><highlight class="normal"><ref refid="classview2_d" kindref="compound">view2D</ref>[]<sp/><ref refid="conversion_8cpp_1ab732d8648dca292f5c6d03d3c8974783" kindref="member">orthographicViews</ref>(</highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>a){</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//returns<sp/>all<sp/>the<sp/>orthographic<sp/>Views<sp/>of<sp/>the<sp/>object<sp/>relative<sp/>to<sp/>the<sp/>current<sp/>axises<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="conversion_8cpp_1a6d172d5c6754ca0c9a657d3705ff765d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/><ref refid="conversion_8cpp_1a6d172d5c6754ca0c9a657d3705ff765d" kindref="member">Generate3D</ref>(<ref refid="classview2_d" kindref="compound">view2D</ref><sp/>a,<ref refid="classview2_d" kindref="compound">view2D</ref><sp/>b,<ref refid="classview2_d" kindref="compound">view2D</ref><sp/>c){</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//takes<sp/>three<sp/>2D<sp/>views<sp/>and<sp/>produces<sp/>an<sp/>object</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="conversion.cpp"/>
+  </compounddef>
+</doxygen>
