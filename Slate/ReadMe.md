@@ -14,3 +14,7 @@ The package is divided into many folders which are:
 7)test : some test cases   
 8)MAKEFILE : to make the package   
 
+<h2>Dependencies</h2>  
+
+OpenGL and GTK+ libraries will be used for image rendering and graphical user interface  
+
