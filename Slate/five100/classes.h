@@ -46,6 +46,8 @@ extern edge2D *e_gh1;
 extern edge2D *e_gh2;
 extern Face *f_g;
 
+void generateWireframe(int c);
+
 void drawWireframe(view3D a);
 
 //view2D translate2D(view2D a,double x,double y);

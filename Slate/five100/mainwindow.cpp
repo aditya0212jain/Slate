@@ -576,3 +576,11 @@ void MainWindow::on_action_Open_D_triggered()
     ui->side_GL->update();
     ui->openGLWidget->hide();
 }
+
+void MainWindow::on_actionConvert_3D_triggered()
+{
+    generateWireframe(0);
+    cout<<"gw"<<endl;
+    ui->openGLWidget->show();
+    ui->openGLWidget->update();
+}

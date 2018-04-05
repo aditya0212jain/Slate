@@ -64,6 +64,8 @@ private slots:
 
     void on_action_Open_D_triggered();
 
+    void on_actionConvert_3D_triggered();
+
 private:
     Ui::MainWindow *ui;
     workspace2D *work;

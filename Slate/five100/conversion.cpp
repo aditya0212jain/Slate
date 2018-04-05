@@ -364,7 +364,7 @@ int getEdge2DAdvanced(view3D* a,vertex2D** b,int c){//returns no. of solid lines
 
 }
 
-view3D generateWireframe(view2D a,view2D b,int c){
+void generateWireframe(int c){
 /*
 order:
     topview x,z         x,-z
@@ -375,63 +375,245 @@ order:
     T S 2
 */
     vertex3D* vTemp;
-    int num=a.n;
-    vertex3D** fv = new vertex3D*[num];
+
+
     string idTemp;
     if(c==0){
+        //a = tvg , b = fvg
+            vertex3D** fv = new vertex3D*[tvg->nv];
+            edge3D* e_new = new edge3D[tvg->n];
+            int ecount=0;
+            int num=tvg->nv;
         for(int i=0;i<num;i++){
-            idTemp=a.v[i]->id;
-            vTemp->x=a.v[i]->x;
-            vTemp->z=a.v[i]->y;
+            vTemp = new vertex3D();
+            idTemp=tvg->v[i]->id;
+            vTemp->x=tvg->v[i]->x;
+            vTemp->z=-1*tvg->v[i]->y;
             vTemp->id=idTemp;
             int j=0;
             while(j<num){
-                if(idTemp.compare(b.v[j]->id)==0){
-                    vTemp->y=b.v[i]->y;
+                if(idTemp.compare(fvg->v[j]->id)==0){
+                    vTemp->y=fvg->v[i]->y;
                     break;
                 }
             j++;
             }
             fv[i]=vTemp;
+            cout<<"fv : "<<fv[i]->x<<","<<fv[i]->y<<","<<fv[i]->z<<","<<fv[i]->id<<endl;
         }
+        cout<<"tvg s"<<tvg->s<<endl;
+        cout<<"fv check"<<fv[0]->id<<","<<fv[1]->id<<","<<fv[2]->id<<endl;
+        for(int i=0;i<tvg->s;i++){
+            string sa,sb;
+            sa = tvg->e[i].a->id;
+            sb = tvg->e[i].b->id;
+            cout<<"sa sb "<<sa<<","<<sb<<endl;
+            int count1=0,j=0,k=0;
+            cout<<"num : "<<num<<endl;
+            for(int po=0;po<num;po++){
+                cout<<"fv[po]->id : "<<fv[po]->id<<endl;
+                if(fv[po]->id.compare(sa)==0){
+                    j=po;
+                    count1++;
+                }else if (fv[po]->id.compare(sb)==0){
+                    k=po;
+                    count1++;
+                }
+                if(count1==2){
+                    break;
+                }
+            }
+            cout<<"o1"<<endl;
+            cout<<"j: "<< j<<" k: "<<k<<endl;
+            edge3D et(fv[j],fv[k]);
+            cout<<"edge "<<et.a->id<<endl;
+            ecount = i;
+            cout<<"o2"<<endl;
+            e_new[i] = et;
+            cout<<"i in loop"<<i<<endl;
+        }
+        cout<<"tvg h "<<tvg->h<<endl;
+        ecount = tvg->s;
+        for(int i=0;i<tvg->h;i++){
+            string sa,sb;
+            sa = tvg->hidden_edge[i].a->id;
+            sb = tvg->hidden_edge[i].b->id;
+            int count1=0,j,k;
+            for(int po=0;po<num;po++){
+                if(fv[po]->id.compare(sa)==0){
+                    j=po;
+                    count1++;
+                }else if (fv[po]->id.compare(sb)==0){
+                    k=po;
+                    count1++;
+                }
+                if(count1==2){
+                    break;
+                }
+            }
+            edge3D et(fv[j],fv[k]);
+            e_new[ecount] = et;
+            ecount++;
+        }
+        cout<<"check"<<endl;
+        //mm = new view3D(fv,e_new,tvg->n);
+        mm->v = fv;
+        mm->n = tvg->n;
+        mm->e = e_new;
+        mm->nv = tvg->nv;
+        cout<<"tvg n"<<tvg->n<<endl;
+        cout<<"mm n "<<mm->n<<endl;
+        for(int i=0;i<mm->nv;i++){
+            cout<<"mm vert:"<<mm->v[i]->x<<","<<mm->v[i]->y<<","<<mm->v[i]->z<<","<<mm->v[i]->id<<endl;
+        }
+        for(int i=0;i<mm->n;i++){
+            cout<<"mm edge: "<<mm->e[i].a->id<<","<<mm->e[i].b->id<<endl;
+            cout<<mm->e[i].a->id<<","<<mm->e[i].a->x<<","<<mm->e[i].a->y<<","<<mm->e[i].a->z<<endl;
+
+                  cout<<mm->e[i].b->id<<","<<mm->e[i].b->x<<","<<mm->e[i].b->y<<","<<mm->e[i].b->z<<endl;
+        }
+
     }
     else if(c==1){
+/*-----------------------        // a = fvg , b = svg ----------------------------------------*/
+
+        vertex3D** fv = new vertex3D*[fvg->nv];
+        edge3D* e_new = new edge3D[fvg->n];
+        int ecount=0;
+        int num=fvg->nv;
         for(int i=0;i<num;i++){
-            idTemp=a.v[i]->id;
-            vTemp->z=a.v[i]->x;
-            vTemp->y=a.v[i]->y;
+            idTemp=fvg->v[i]->id;
+            vTemp->z=fvg->v[i]->x;
+            vTemp->y=fvg->v[i]->y;
             vTemp->id=idTemp;
             int j=0;
             while(j<num){
-                if(idTemp.compare(b.v[j]->id)==0){
-                    vTemp->x=b.v[i]->x;
+                if(idTemp.compare(svg->v[j]->id)==0){
+                    vTemp->x=svg->v[i]->x;
                     break;
                 }
             j++;
             }
             fv[i]=vTemp;
         }
+        for(int i=0;i<fvg->s;i++){
+            string sa,sb;
+            sa = fvg->e[i].a->id;
+            sb = fvg->e[i].b->id;
+            int count1=0,j,k;
+            for(int po=0;po<num;po++){
+                if(fv[po]->id.compare(sa)==0){
+                    j=po;
+                    count1++;
+                }else if (fv[po]->id.compare(sb)==0){
+                    k=po;
+                    count1++;
+                }
+                if(count1==2){
+                    break;
+                }
+            }
+            edge3D et(fv[j],fv[k]);
+            ecount = i;
+            e_new[i] = et;
+        }
+        ecount = fvg->s;
+        for(int i=0;i<fvg->h;i++){
+            string sa,sb;
+            sa = fvg->hidden_edge[i].a->id;
+            sb = fvg->hidden_edge[i].b->id;
+            int count1=0,j,k;
+            for(int po=0;po<num;po++){
+                if(fv[po]->id.compare(sa)==0){
+                    j=po;
+                    count1++;
+                }else if (fv[po]->id.compare(sb)==0){
+                    k=po;
+                    count1++;
+                }
+                if(count1==2){
+                    break;
+                }
+            }
+            edge3D et(fv[j],fv[k]);
+            e_new[ecount] = et;
+            ecount++;
+        }
+
+        mm = new view3D(fv,e_new,fvg->n);
+        mm->nv = fvg->nv;
+
+
     }
     else if (c==2){
+/*------------------------       // a = tvg , b = svg------------------------------------------*/
+
+        vertex3D** fv = new vertex3D*[tvg->nv];
+        edge3D* e_new = new edge3D[tvg->n];
+        int ecount=0;
+        int num=tvg->nv;
         for(int i=0;i<num;i++){
-            idTemp=a.v[i]->id;
-            vTemp->x=a.v[i]->x;
-            vTemp->z=a.v[i]->y;
+            idTemp=tvg->v[i]->id;
+            vTemp->x=tvg->v[i]->x;
+            vTemp->z=tvg->v[i]->y;
             vTemp->id=idTemp;
             int j=0;
             while(j<num){
-                if(idTemp.compare(b.v[j]->id)==0){
-                    vTemp->y=b.v[i]->y;
+                if(idTemp.compare(svg->v[j]->id)==0){
+                    vTemp->y=svg->v[i]->y;
                     break;
                 }
             j++;
             }
             fv[i]=vTemp;
         }
-    }
-    view3D result(fv,num);
 
-    return result;
+        for(int i=0;i<tvg->s;i++){
+            string sa,sb;
+            sa = tvg->e[i].a->id;
+            sb = tvg->e[i].b->id;
+            int count1=0,j,k;
+            for(int po=0;po<num;po++){
+                if(fv[po]->id.compare(sa)==0){
+                    j=po;
+                    count1++;
+                }else if (fv[po]->id.compare(sb)==0){
+                    k=po;
+                    count1++;
+                }
+                if(count1==2){
+                    break;
+                }
+            }
+            edge3D et(fv[j],fv[k]);
+            ecount = i;
+            e_new[i] = et;
+        }
+        ecount = tvg->s;
+        for(int i=0;i<tvg->h;i++){
+            string sa,sb;
+            sa = tvg->hidden_edge[i].a->id;
+            sb = tvg->hidden_edge[i].b->id;
+            int count1=0,j,k;
+            for(int po=0;po<num;po++){
+                if(fv[po]->id.compare(sa)==0){
+                    j=po;
+                    count1++;
+                }else if (fv[po]->id.compare(sb)==0){
+                    k=po;
+                    count1++;
+                }
+                if(count1==2){
+                    break;
+                }
+            }
+            edge3D et(fv[j],fv[k]);
+            e_new[ecount] = et;
+            ecount++;
+        }
+        mm = new view3D(fv,e_new,tvg->n);
+        mm->nv = tvg->nv;
+    }
 }
 
 bool isHidden(edge3D *e,int c,int d){

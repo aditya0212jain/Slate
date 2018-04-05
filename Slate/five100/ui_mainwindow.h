@@ -385,12 +385,12 @@ public:
         side_GL->setGeometry(QRect(0, 0, 961, 481));
         tabWidget->addTab(tab_3, QString());
         MainWindow->setCentralWidget(centralWidget);
+        tabWidget->raise();
+        openGLWidget->raise();
         layoutWidget->raise();
         label_8->raise();
         label_15->raise();
         label_16->raise();
-        tabWidget->raise();
-        openGLWidget->raise();
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 1158, 19));
@@ -451,11 +451,11 @@ public:
         actionAbout_Slate->setText(QApplication::translate("MainWindow", "About Slate", 0));
         actionVersion_Information->setText(QApplication::translate("MainWindow", "Version Information", 0));
         actionWireframe_Solid->setText(QApplication::translate("MainWindow", "Wireframe/Solid", 0));
-        actionConvert_2D->setText(QApplication::translate("MainWindow", "Convert 2D", 0));
+        actionConvert_2D->setText(QApplication::translate("MainWindow", "Convert to 2D", 0));
         actionShow3D->setText(QApplication::translate("MainWindow", "Workspace3D", 0));
         actionWorkspace2D->setText(QApplication::translate("MainWindow", "Workspace2D", 0));
         action_Open_D->setText(QApplication::translate("MainWindow", "&Open2D", 0));
-        actionConvert_3D->setText(QApplication::translate("MainWindow", "Convert 3D", 0));
+        actionConvert_3D->setText(QApplication::translate("MainWindow", "Convert to 3D", 0));
         label->setText(QApplication::translate("MainWindow", "Translate", 0));
         label_9->setText(QApplication::translate("MainWindow", "x", 0));
         label_10->setText(QApplication::translate("MainWindow", "y", 0));
