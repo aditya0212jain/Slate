@@ -1,32 +1,39 @@
 #include "classes.h"
 #include "primitive.h"
 #include<Eigen/Core>
+#include<iostream>
 
 #define PI 3.14159265
 using namespace Eigen;
 using namespace std;
 	
 void view3D::translate3D(double x,double y,double z){
+    std::cout<<"inside translate3"<<endl;
 	Matrix4d trans3D;
 	trans3D<<1,0,0,0,
 		 0,1,0,0,
 		 0,0,1,0,
 		 x,y,z,1;
-	vertex3D u,p;
-	for(int i=0;i<this->n;i++){
+	vertex3D *u;
+    for(int i=0;i<this->nv;i++){
+        std::cout<<"loop for i:"<<i<<endl;
+		vertex3D* p=new vertex3D();
 		u=this->v[i];
-		RowVector4d b(u.x,u.y,u.z,1);
+        std::cout<<"w1"<<endl;
+		RowVector4d b(u->x,u->y,u->z,1);
 		RowVector4d t;
 		t=b*trans3D;
-		p.x=t(0);
-		p.y=t(1);
-		p.z=t(2);
-		p.id=u.id;
-		this->v[i]=p;		
+        u->x=t(0);
+        u->y=t(1);
+        u->z=t(2);
+        //u->id=u->id;
+        std::cout<<"w2"<<endl;
+        //this->v[i]=p;
+        //std::cout<<"w3"<<endl;
 
 	}			
-
-};
+    std::cout<<"o"<<endl;
+}
 
 
 void view3D::scaling3D(double x,double y,double z){
@@ -35,17 +42,18 @@ void view3D::scaling3D(double x,double y,double z){
 		 0,y,0,0,
 		 0,0,z,0,
 		 0,0,0,1;
-	vertex3D u,p;
-	for(int i=0;i<this->n;i++){
+	vertex3D *u;
+    for(int i=0;i<this->nv;i++){
+		vertex3D* p=new vertex3D();
 		u=this->v[i];
-		RowVector4d b(u.x,u.y,u.z,1);
+		RowVector4d b(u->x,u->y,u->z,1);
 		RowVector4d t;
 		t=b*trans3D;
-		p.x=t(0);
-		p.y=t(1);
-		p.z=t(2);
-		p.id=u.id;
-		this->v[i]=p;		
+        u->x=t(0);
+        u->y=t(1);
+        u->z=t(2);
+        //u->id=u->id;
+        //this->v[i]=p;
 
 	}			
 };
@@ -71,19 +79,20 @@ void view3D::reflection3D(int b){
 		trans3D=trans3Dy;}
 	else if(b==2){
 		trans3D=trans3Dz;}
-	vertex3D u,p;
-	for(int i=0;i<this->n;i++){
+	vertex3D *u;
+    for(int i=0;i<this->nv;i++){
+		vertex3D* p=new vertex3D();
 		u=this->v[i];
-		RowVector4d b(u.x,u.y,u.z,1);
+		RowVector4d b(u->x,u->y,u->z,1);
 		RowVector4d t;
 		t=b*trans3D;
-		p.x=t(0);
-		p.y=t(1);
-		p.z=t(2);
-		p.id=u.id;
-		this->v[i]=p;		
+        u->x=t(0);
+        u->y=t(1);
+        u->z=t(2);
+        //u->id=u->id;
+        //this->v[i]=p;
 
-	}	
+	}
 
 
 
@@ -113,17 +122,18 @@ void view3D::rotation3D(double a,int b){
 		trans3D=trans3Dy;}
 	else if (b==2){
 		trans3D=trans3Dz;}
-	vertex3D u,p;
-	for(int i=0;i<this->n;i++){
+	vertex3D *u;
+    for(int i=0;i<this->nv;i++){
+		vertex3D* p=new vertex3D();
 		u=this->v[i];
-		RowVector4d b(u.x,u.y,u.z,1);
+		RowVector4d b(u->x,u->y,u->z,1);
 		RowVector4d t;
 		t=b*trans3D;
-		p.x=t(0);
-		p.y=t(1);
-		p.z=t(2);
-		p.id=u.id;
-		this->v[i]=p;		
+        u->x=t(0);
+        u->y=t(1);
+        u->z=t(2);
+        //u->id=u->id;
+        //this->v[i]=p;
 
 	}	
 

@@ -36,20 +36,20 @@ order:
 	F S 1
 	T S 2
 */
-	vertex3D vTemp;
+	vertex3D* vTemp;
 	int num=a.n;
-	vertex3D fv[num];
+	vertex3D** fv = new vertex3D*[num];
 	string idTemp;
 	if(c==0){
 		for(int i=0;i<num;i++){
-			idTemp=a.v[i].id; 		
-			vTemp.x=a.v[i].x;
-			vTemp.z=a.v[i].y;
-			vTemp.id=idTemp;
+			idTemp=a.v[i]->id; 		
+			vTemp->x=a.v[i]->x;
+			vTemp->z=a.v[i]->y;
+			vTemp->id=idTemp;
 			int j=0;
 			while(j<num){
-				if(idTemp.compare(b.v[j].id)==0){
-					vTemp.y=b.v[i].y;
+				if(idTemp.compare(b.v[j]->id)==0){
+					vTemp->y=b.v[i]->y;
 					break;				
 				}		
 			j++;
@@ -59,14 +59,14 @@ order:
 	}
 	else if(c==1){
 		for(int i=0;i<num;i++){
-			idTemp=a.v[i].id; 		
-			vTemp.z=a.v[i].x;
-			vTemp.y=a.v[i].y;
-			vTemp.id=idTemp;
+			idTemp=a.v[i]->id; 		
+			vTemp->z=a.v[i]->x;
+			vTemp->y=a.v[i]->y;
+			vTemp->id=idTemp;
 			int j=0;
 			while(j<num){
-				if(idTemp.compare(b.v[j].id)==0){
-					vTemp.x=b.v[i].x;
+				if(idTemp.compare(b.v[j]->id)==0){
+					vTemp->x=b.v[i]->x;
 					break;				
 				}		
 			j++;
@@ -76,14 +76,14 @@ order:
 	}
 	else if (c==2){
 		for(int i=0;i<num;i++){
-			idTemp=a.v[i].id; 		
-			vTemp.x=a.v[i].x;
-			vTemp.z=a.v[i].y;
-			vTemp.id=idTemp;
+			idTemp=a.v[i]->id; 		
+			vTemp->x=a.v[i]->x;
+			vTemp->z=a.v[i]->y;
+			vTemp->id=idTemp;
 			int j=0;
 			while(j<num){
-				if(idTemp.compare(b.v[j].id)==0){
-					vTemp.y=b.v[i].y;
+				if(idTemp.compare(b.v[j]->id)==0){
+					vTemp->y=b.v[i]->y;
 					break;				
 				}		
 			j++;

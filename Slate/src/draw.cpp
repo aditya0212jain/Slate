@@ -10,9 +10,6 @@ using namespace Eigen;
 
 void view2D::drawView2D(void){
 	
-	glClear(GL_COLOR_BUFFER_BIT);
-	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
-	
 	
 	
 	
@@ -52,31 +49,34 @@ void view2D::drawView2D(void){
 	}
 	glPopAttrib();
 
-	glFlush(); 
 
 };
 
 void view3D::drawView3D(void){};
 
 void view3D::drawWireframe(void){
-	glClear(GL_COLOR_BUFFER_BIT);
-	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 	
 	edge3D temp;
 	vertex3D *aTemp,*bTemp;
-	
+	cout<<"in draw function"<<endl;
+    vertex3D** uop=this->v;
+    std::cout<<uop[0]->x<<" "<<uop[0]->y<<" "<<uop[0]->z<<endl;
 	for(int i=0;i<this->n;i++){
+		cout<<"working"<<endl;
 		temp = this->e[i];
+		cout<<"yes0"<<endl;
 		aTemp=temp.a;
 		bTemp=temp.b;
+		cout<<"yes2"<<endl;
+		cout<<temp.a->z<<endl;
+		cout<<temp.b->z<<endl;
 		glBegin(GL_LINES);
-		  glColor3f(1.0,1.0,0.0);
-		  glVertex3f(aTemp->x,aTemp->y,aTemp->z);
+		  glColor3f(1.0,0.0,0.0);
+		  glVertex3f(temp.a->x,temp.a->y,temp.a->z);
 		  glVertex3f(bTemp->x,bTemp->y,bTemp->z);
 		glEnd();		
 	}
 	
-	glFlush();
 };
 
 
