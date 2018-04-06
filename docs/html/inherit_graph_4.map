@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$class_front_g_l.html" title="Class for OpenGL rendering of front view of our object. " alt="" coords="185,5,255,32"/>
+<area shape="rect" id="node3" href="$class_o_g_l_widget.html" title="Class for OpenGL rendering of 3D view of our Object. " alt="" coords="175,56,265,83"/>
+<area shape="rect" id="node4" href="$class_side_g_l.html" title="Class for OpenGL rendering of Side view of our object. " alt="" coords="187,107,253,133"/>
+<area shape="rect" id="node5" href="$class_top_g_l.html" title="Class for OpenGL rendering of top view of our object. " alt="" coords="190,157,250,184"/>
+</map>

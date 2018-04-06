@@ -1,0 +1,6 @@
+<map id="Ui_MainWindow" name="Ui_MainWindow">
+<area shape="rect" id="node2" href="$class_top_g_l.html" title="Class for OpenGL rendering of top view of our object. " alt="" coords="5,81,65,108"/>
+<area shape="rect" id="node4" href="$class_o_g_l_widget.html" title="Class for OpenGL rendering of 3D view of our Object. " alt="" coords="90,81,181,108"/>
+<area shape="rect" id="node5" href="$class_front_g_l.html" title="Class for OpenGL rendering of front view of our object. " alt="" coords="205,81,274,108"/>
+<area shape="rect" id="node6" href="$class_side_g_l.html" title="Class for OpenGL rendering of Side view of our object. " alt="" coords="299,81,364,108"/>
+</map>
