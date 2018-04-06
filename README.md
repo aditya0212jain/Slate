@@ -24,7 +24,7 @@ LDLIBS += -lm -lGLU -lGL -lglut -L/home/aditya//product/libs/Qt5.7.0/5.7/gcc_64/
 ```
 And update the directory location according to your system.<br>
 3. run make in the terminal<br>
-4. Start the app by running `slate` in a terminal
+4. Start the app by running `main` in bin folder
 
 ## Dependencies
 
