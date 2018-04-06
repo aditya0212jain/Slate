@@ -1,0 +1,17 @@
+4
+6
+4
+0 -2 0 A
+1.5 0 2 B
+0 0 -2 C
+-1.5 0 2 D
+A B
+A C
+A D
+B C
+B D
+C D
+A B C
+A B D
+A C D
+B C D
