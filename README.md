@@ -42,13 +42,12 @@ $ sudo apt-get install freeglut3-dev
 - [x] Mouse dragging change in camera view without affecting object
 
 ## Usage
-<kbd>ctrl + O</kbd> - Open 3D
-<kbd>ctrl + C</kbd> - Open 2D
+<kbd>ctrl + O</kbd> - Open 3D<br>
+<kbd>ctrl + shift + O</kbd> - Open 2D
 
 ## Built with
-- [Qt5.7](https://www1.qt.io/qt5-7/)
-- [OpenGL] (https://www.opengl.org/documentation/)
-- [Eigen](http://eigen.tuxfamily.org/)
+- [Qt5.7](https://www1.qt.io/qt5-7/)<br>
+- [Eigen](http://eigen.tuxfamily.org/)<br>
 
 
 ## License
