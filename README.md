@@ -52,4 +52,4 @@ $ sudo apt-get install freeglut3-dev
 
 ## License
 
-MIT  © [Aditya Jain](http://iitd.info/ankitjha)
+MIT  © [Aditya Jain]
